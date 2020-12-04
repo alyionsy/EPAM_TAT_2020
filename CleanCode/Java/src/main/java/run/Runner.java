@@ -1,7 +1,10 @@
-import models.MilitaryType;
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
+package run;
+
+import entity.Airport;
+import entity.type.MilitaryType;
+import entity.plane.MilitaryPlane;
+import entity.plane.PassengerPlane;
+import entity.plane.Plane;
 
 import java.util.Arrays;
 import java.util.List;

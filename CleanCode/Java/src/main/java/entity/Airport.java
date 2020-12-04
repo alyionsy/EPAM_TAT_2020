@@ -1,8 +1,10 @@
-import Planes.experimentalPlane;
-import models.MilitaryType;
-import Planes.MilitaryPlane;
-import Planes.PassengerPlane;
-import Planes.Plane;
+package entity;
+
+import entity.plane.ExperimentalPlane;
+import entity.type.MilitaryType;
+import entity.plane.MilitaryPlane;
+import entity.plane.PassengerPlane;
+import entity.plane.Plane;
 
 import java.util.*;
 
@@ -77,14 +79,14 @@ public class Airport {
 
     }
 
-    public List<experimentalPlane> getExperimentalPlanes() {
-        List<experimentalPlane> experimentalPlanes = new ArrayList<>();
+    public List<ExperimentalPlane> getExperimentalPlanes() {
+        List<ExperimentalPlane> ExperimentalPlanes = new ArrayList<>();
         for (Plane plane : planes) {
-            if (plane instanceof experimentalPlane) {
-                experimentalPlanes.add((experimentalPlane) plane);
+            if (plane instanceof ExperimentalPlane) {
+                ExperimentalPlanes.add((ExperimentalPlane) plane);
             }
         }
-        return experimentalPlanes;
+        return ExperimentalPlanes;
     }
 
     public Airport sortByMaxDistance() {
@@ -99,7 +101,7 @@ public class Airport {
 
     /**
      * Sorts by max speed
-     * @return Airport
+     * @return entity.Airport
      */
     public Airport sortByMaxSpeed() {
         Collections.sort(planes, new Comparator<Plane>() {
@@ -133,8 +135,8 @@ public class Airport {
 
     @Override
     public String toString() {
-        return "Airport{" +
-                "Planes=" + planes.toString() +
+        return "entity.Airport{" +
+                "entity.Planes=" + planes.toString() +
                 '}';
     }
 
