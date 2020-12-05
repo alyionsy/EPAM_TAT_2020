@@ -17,7 +17,7 @@ public class Airport {
     }
 
     public List<? extends Plane> getPlanes() {
-        List<? extends Plane> planesCopy = planes.;
+        List<? extends Plane> planesCopy = planes;
         return planes;
     }
 
