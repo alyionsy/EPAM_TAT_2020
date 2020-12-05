@@ -39,7 +39,7 @@ public class WebDriverTest {
 
     @Test
     public void addToCartTest() {
-        driver.get("http://www.ktown4u.com/");
+        landingPage.openPage("http://www.ktown4u.com/");
 
         landingPage.fillSearchField("BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)");
         landingPage.clickSearchButton();
@@ -47,8 +47,8 @@ public class WebDriverTest {
         searchResultPage.itemLinkClick();
 
         itemPage.cartButtonClick();
-        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
-                .until(ExpectedConditions.elementToBeClickable(itemPage.getGoToCartButton()));
+
+        itemPage.waitForTheNextWebElement(itemPage.getGoToCartButton());
         itemPage.goToCartButtonClick();
 
         Assert.assertEquals(cartPage.getItemName(), "BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)");
@@ -58,7 +58,7 @@ public class WebDriverTest {
     public void invalidPasswordTest() {
         String userId = "erionolsen@gmail.com";
         String wrongPassword = "12345mq";
-        driver.get("http://www.ktown4u.com/");
+        landingPage.openPage("http://www.ktown4u.com/");
 
         landingPage.clickLoginButton();
         loginPage.enterLogin(userId);

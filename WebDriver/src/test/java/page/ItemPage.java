@@ -37,4 +37,9 @@ public class ItemPage {
     public WebElement getGoToCartButton() {
         return goToCartButton;
     }
+
+    public void waitForTheNextWebElement(WebElement nextElement) {
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
+                .until(ExpectedConditions.elementToBeClickable(nextElement));
+    }
 }

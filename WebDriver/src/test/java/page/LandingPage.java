@@ -13,6 +13,10 @@ public class LandingPage {
         this.driver = driver;
     }
 
+    public void openPage(String url) {
+        driver.get(url);
+    }
+
     @FindBy(xpath = "//a[@href=\"/login\"]")
     private WebElement loginButton;
 
