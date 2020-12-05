@@ -3,13 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="775e718c-fd17-45df-a6f6-13211596df31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/Airport.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/Airport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebDriver.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/plane/ExperimentalPlane.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/plane/ExperimentalPlane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/plane/MilitaryPlane.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/plane/MilitaryPlane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/type/ExperimentalType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/type/ExperimentalPlaneType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/type/MilitaryType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/entity/type/MilitaryPlaneType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/run/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/main/java/run/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CleanCode/Java/src/test/java/AirportTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CleanCode/Java/src/test/java/AirportTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +173,7 @@
       <workItem from="1607194077601" duration="660000" />
       <workItem from="1607194743924" duration="92000" />
       <workItem from="1607194843462" duration="75000" />
-      <workItem from="1607194966574" duration="3854000" />
+      <workItem from="1607194966574" duration="4455000" />
     </task>
     <servers />
   </component>

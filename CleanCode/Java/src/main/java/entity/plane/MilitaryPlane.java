@@ -1,18 +1,18 @@
 package entity.plane;
 
-import entity.type.MilitaryType;
+import entity.type.MilitaryPlaneType;
 
 import java.util.Objects;
 
 public class MilitaryPlane extends Plane {
-    private MilitaryType type;
+    private MilitaryPlaneType type;
 
-    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryType militaryType) {
+    public MilitaryPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, MilitaryPlaneType militaryPlaneType) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
-        this.type = militaryType;
+        this.type = militaryPlaneType;
     }
 
-    public MilitaryType getType() {
+    public MilitaryPlaneType getType() {
         return type;
     }
 

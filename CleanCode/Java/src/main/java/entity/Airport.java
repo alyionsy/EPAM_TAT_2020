@@ -1,7 +1,7 @@
 package entity;
 
 import entity.plane.ExperimentalPlane;
-import entity.type.MilitaryType;
+import entity.type.MilitaryPlaneType;
 import entity.plane.MilitaryPlane;
 import entity.plane.PassengerPlane;
 import entity.plane.Plane;
@@ -16,12 +16,12 @@ public class Airport {
         this.planes = planes;
     }
 
-    public List<? extends Plane> getPlanes() {
-        List<? extends Plane> planesCopy = planes;
-        return planes;
+    public List<? extends Plane> getAllPlanes() {
+        List<? extends Plane> planesCopy = new ArrayList<>(planes);
+        return planesCopy;
     }
 
-    public List<PassengerPlane> getPassengerPlaneList() {
+    public List<PassengerPlane> getPassengerPlanes() {
         return this.planes.stream()
                 .filter(plane -> plane instanceof PassengerPlane)
                 .map(plane -> (PassengerPlane) plane)
@@ -36,18 +36,24 @@ public class Airport {
     }
 
     public PassengerPlane getPassengerPlaneWithMaxPassengersCapacity() {
-        return getPassengerPlaneList().stream().max(Comparator.comparing(PassengerPlane::getPassengersCapacity)).get();
+        return getPassengerPlanes().stream().max(Comparator.comparing(PassengerPlane::getPassengersCapacity)).get();
     }
 
     public List<MilitaryPlane> getTransportMilitaryPlanes() {
         return getMilitaryPlanes().stream()
-                .filter(militaryPlane -> militaryPlane.getType().equals(MilitaryType.TRANSPORT))
+                .filter(militaryPlane -> militaryPlane.getType().equals(MilitaryPlaneType.TRANSPORT))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
     public List<MilitaryPlane> getBomberMilitaryPlanes() {
         return getMilitaryPlanes().stream()
-                .filter(militaryPlane -> militaryPlane.getType().equals(MilitaryType.BOMBER))
+                .filter(militaryPlane -> militaryPlane.getType().equals(MilitaryPlaneType.BOMBER))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public List<MilitaryPlane> getFighterMilitaryPlanes() {
+        return getMilitaryPlanes().stream()
+                .filter(militaryPlane -> militaryPlane.getType().equals(MilitaryPlaneType.FIGHTER))
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 

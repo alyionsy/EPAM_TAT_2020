@@ -1,5 +1,5 @@
 package entity.type;
 
-public enum MilitaryType {
+public enum MilitaryPlaneType {
     FIGHTER, BOMBER, TRANSPORT
 }

@@ -1,15 +1,15 @@
 package entity.plane;
 
 import entity.type.ClassificationLevel;
-import entity.type.ExperimentalType;
+import entity.type.ExperimentalPlaneType;
 
 import java.util.Objects;
 
 public class ExperimentalPlane extends Plane {
-    private ExperimentalType type;
+    private ExperimentalPlaneType type;
     private ClassificationLevel classificationLevel;
 
-    public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, ExperimentalType type, ClassificationLevel classificationLevel) {
+    public ExperimentalPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity, ExperimentalPlaneType type, ClassificationLevel classificationLevel) {
         super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
         this.type = type;
         this.classificationLevel = classificationLevel;

@@ -1,5 +1,5 @@
 package entity.type;
 
-public enum ExperimentalType {
+public enum ExperimentalPlaneType {
     HIGH_ALTITUDE, VTOL
 }
