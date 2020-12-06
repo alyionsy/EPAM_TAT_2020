@@ -37,7 +37,9 @@ public class WebDriverTest {
     public void addToCartTest() {
         landingPage.openPage("http://www.ktown4u.com/");
 
-        landingPage.fillSearchField("BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)");
+        String itemName = "BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)";
+
+        landingPage.fillSearchField(itemName);
         landingPage.clickSearchButton();
 
         searchResultPage.itemLinkClick();
@@ -47,7 +49,7 @@ public class WebDriverTest {
         itemPage.waitForTheNextWebElement(itemPage.getGoToCartButton());
         itemPage.goToCartButtonClick();
 
-        Assert.assertEquals(cartPage.getItemName(), "BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)");
+        Assert.assertEquals(cartPage.getItemName(), itemName);
     }
 
     @Test
