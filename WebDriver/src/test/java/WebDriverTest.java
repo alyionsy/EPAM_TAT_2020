@@ -8,12 +8,12 @@ import org.testng.annotations.Test;
 import page.*;
 
 public class WebDriverTest {
-    public LandingPage landingPage;
-    public LoginPage loginPage;
-    public SearchResultPage searchResultPage;
-    public ItemPage itemPage;
-    public CartPage cartPage;
-    public WebDriver driver;
+    private LandingPage landingPage;
+    private LoginPage loginPage;
+    private SearchResultPage searchResultPage;
+    private ItemPage itemPage;
+    private CartPage cartPage;
+    private WebDriver driver;
 
     @BeforeClass
     public void initialize() {
@@ -29,8 +29,6 @@ public class WebDriverTest {
         searchResultPage = new SearchResultPage(driver);
         itemPage = new ItemPage(driver);
         cartPage = new CartPage(driver);
-
-        driver.manage().window().maximize();
     }
 
     @Test
