@@ -1,18 +1,19 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import page.*;
+
+import java.time.Duration;
+import java.util.ArrayList;
 
 public class WebDriverTest {
-    private LandingPage landingPage;
-    private LoginPage loginPage;
-    private SearchResultPage searchResultPage;
-    private ItemPage itemPage;
-    private CartPage cartPage;
     private WebDriver driver;
 
     @BeforeClass
@@ -24,44 +25,35 @@ public class WebDriverTest {
 
         driver = new ChromeDriver(chromeOptions);
 
-        landingPage = new LandingPage(driver);
-        loginPage = new LoginPage(driver);
-        searchResultPage = new SearchResultPage(driver);
-        itemPage = new ItemPage(driver);
-        cartPage = new CartPage(driver);
+//        driver.manage().window().maximize();
     }
 
     @Test
     public void addToCartTest() {
-        landingPage.openPage("http://www.ktown4u.com/");
+        String url = "http://www.ktown4u.com/";
+        driver.get(url);
 
         String itemName = "BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)";
 
-        landingPage.fillSearchField(itemName);
-        landingPage.clickSearchButton();
+        WebElement searchField = driver.findElement(By.xpath("//input[@id=\"goodsTextSearch\"]"));
+        searchField.sendKeys(itemName);
+        WebElement searchButton = driver.findElement(By.xpath("//button[@id=\"searchGo\"]"));
+        searchButton.click();
 
-        searchResultPage.itemLinkClick();
+        WebElement itemLink = driver.findElement(By.xpath("//span[@class=\"btxt\"]"));
+        itemLink.click();
+        driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
 
-        itemPage.cartButtonClick();
+        WebElement cartButton = driver.findElement(By.xpath("//button[@id=\"cartGo2\"]"));
+        cartButton.click();
+        new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
+                .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class=\"modal-btn btn-light-blue\"]")));
 
-        itemPage.waitForTheNextWebElement(itemPage.getGoToCartButton());
-        itemPage.goToCartButtonClick();
+        WebElement goToCartButton = driver.findElement(By.xpath("//a[@class=\"modal-btn btn-light-blue\"]"));
+        goToCartButton.click();
 
-        Assert.assertEquals(cartPage.getItemName(), itemName);
-    }
-
-    @Test
-    public void invalidPasswordTest() {
-        String userId = "erionolsen@gmail.com";
-        String wrongPassword = "12345mq";
-        landingPage.openPage("http://www.ktown4u.com/");
-
-        landingPage.clickLoginButton();
-        loginPage.enterLogin(userId);
-        loginPage.enterPassword(wrongPassword);
-        loginPage.clickLoginSubmitButton();
-
-        Assert.assertEquals("", loginPage.getLogin());
+        String itemInCartName = driver.findElement(By.xpath("//span[@class=\"btxt\"]")).getText();
+        Assert.assertEquals(itemInCartName, itemName);
     }
 
     @AfterClass
