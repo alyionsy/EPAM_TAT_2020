@@ -24,7 +24,8 @@ public class SearchResultPage extends AbstractPage {
     }
 
     @Override
-    public void openPage() {
+    public SearchResultPage openPage() {
         driver.navigate().to(BASE_URL);
+        return this;
     }
 }

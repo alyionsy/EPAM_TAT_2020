@@ -39,7 +39,8 @@ public class LoginPage extends AbstractPage {
     }
 
     @Override
-    public void openPage() {
+    public LoginPage openPage() {
         driver.navigate().to(BASE_URL);
+        return this;
     }
 }

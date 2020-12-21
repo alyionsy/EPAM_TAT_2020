@@ -35,7 +35,8 @@ public class LandingPage extends AbstractPage {
     }
 
     @Override
-    public void openPage() {
+    public LandingPage openPage() {
         driver.navigate().to(BASE_URL);
+        return this;
     }
 }

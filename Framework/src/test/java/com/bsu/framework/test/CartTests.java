@@ -1,39 +1,30 @@
 package com.bsu.framework.test;
 
+import com.bsu.framework.model.Item;
 import com.bsu.framework.page.CartPage;
 import com.bsu.framework.page.ItemPage;
-import com.bsu.framework.page.LandingPage;
-import com.bsu.framework.page.SearchResultPage;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 public class CartTests extends CommonConditions {
-    public static final String ITEM_NAME = "BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)";
+    private Item item = new Item("http://www.ktown4u.com/iteminfo?grp_no=1741898&goods_no=47178",
+            "BLACKPINK - 1st FULL ALBUM [THE ALBUM] (Ver.3)");
 
     @Test
     public void addToCartTest() {
-        LandingPage landingPage = new LandingPage(driver);
-        landingPage.openPage();
+        new ItemPage(driver, item.getUrl())
+                .openPage()
+                .addToCart()
+                .waitForTheNextWebElement()
+                .goToCart();
 
-        landingPage.fillSearchField(ITEM_NAME);
-        landingPage.clickSearchButton();
+        String itemInCartName = new CartPage(driver)
+                .openPage()
+                .getItemName();
 
-        SearchResultPage searchResultPage = new SearchResultPage(driver);
-        searchResultPage.itemLinkClick();
-
-        ItemPage itemPage = new ItemPage(driver);
-        itemPage.cartButtonClick();
-
-        itemPage.waitForTheNextWebElement(itemPage.getGoToCartButton());
-        itemPage.goToCartButtonClick();
-
-        CartPage cartPage = new CartPage(driver);
-
-        assertThat(cartPage.getItemName(), is(equalTo(ITEM_NAME)));
+        assertThat(itemInCartName, is(equalTo(item.getName())));
     }
 }

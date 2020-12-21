@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CartPage extends AbstractPage {
-    private final String BASE_URL = "http://www.ktown4u.com/";
+    private final String CART_URL = "http://www.ktown4u.com/cart";
 
     @FindBy(xpath = "//span[@class=\"btxt\"]")
     private WebElement item;
@@ -21,7 +21,8 @@ public class CartPage extends AbstractPage {
     }
 
     @Override
-    public void openPage() {
-        driver.navigate().to(BASE_URL);
+    public CartPage openPage() {
+        driver.navigate().to(CART_URL);
+        return this;
     }
 }

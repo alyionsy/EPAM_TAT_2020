@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ItemPage extends AbstractPage {
-    private final String BASE_URL = "http://www.ktown4u.com/";
+    private String itemUrl;
 
     @FindBy(xpath = "//button[@id=\"cartGo2\"]")
-    private WebElement cartButton;
+    private WebElement addToCartButton;
 
     @FindBy(xpath = "//a[@class=\"modal-btn btn-light-blue\"]")
     private WebElement goToCartButton;
@@ -24,27 +24,33 @@ public class ItemPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void cartButtonClick() {
-        cartButton.click();
+    public ItemPage(WebDriver driver, String itemUrl) {
+        super(driver);
+        this.itemUrl = itemUrl;
+        PageFactory.initElements(this.driver, this);
+    }
+
+    public ItemPage addToCart() {
+        addToCartButton.click();
         new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class=\"modal-btn btn-light-blue\"]")));
+        return this;
     }
 
-    public void goToCartButtonClick() {
+    public ItemPage goToCart() {
         goToCartButton.click();
+        return this;
     }
 
-    public WebElement getGoToCartButton() {
-        return goToCartButton;
-    }
-
-    public void waitForTheNextWebElement(WebElement nextElement) {
+    public ItemPage waitForTheNextWebElement() {
         new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
-                .until(ExpectedConditions.elementToBeClickable(nextElement));
+                .until(ExpectedConditions.elementToBeClickable(goToCartButton));
+        return this;
     }
 
     @Override
-    public void openPage() {
-        driver.navigate().to(BASE_URL);
+    public ItemPage openPage() {
+        driver.navigate().to(itemUrl);
+        return this;
     }
 }
