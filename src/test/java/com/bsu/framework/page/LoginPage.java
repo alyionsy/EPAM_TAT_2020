@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends AbstractPage {
-    private final String LOGIN_URL = "http://www.ktown4u.com/login";
+    private final String BASE_URL = "http://www.ktown4u.com/";
 
     @FindBy(xpath = "//input[@id=\"user_id\"]")
     private WebElement loginField;
@@ -38,17 +38,8 @@ public class LoginPage extends AbstractPage {
         return loginField.getText();
     }
 
-    public String getCurrentPageUrl() {
-        return driver.getCurrentUrl();
-    }
-
-    public String getLoginPageUrl() {
-        return LOGIN_URL;
-    }
-
     @Override
-    public LoginPage openPage() {
-        driver.navigate().to(LOGIN_URL);
-        return this;
+    public void openPage() {
+        driver.navigate().to(BASE_URL);
     }
 }

@@ -4,10 +4,12 @@ import java.util.Objects;
 
 public class Item {
     private String url;
+    private String xpath;
     private String name;
 
-    public Item(String url, String name) {
+    public Item(String url, String xpath, String name) {
         this.url = url;
+        this.xpath = xpath;
         this.name = name;
     }
 
@@ -17,6 +19,14 @@ public class Item {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getXpath() {
+        return xpath;
+    }
+
+    public void setXpath(String xpath) {
+        this.xpath = xpath;
     }
 
     public String getName() {
@@ -33,11 +43,12 @@ public class Item {
         if (o == null || getClass() != o.getClass()) return false;
         Item item = (Item) o;
         return Objects.equals(url, item.url) &&
+                Objects.equals(xpath, item.xpath) &&
                 Objects.equals(name, item.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(url, name);
+        return Objects.hash(url, xpath, name);
     }
 }
