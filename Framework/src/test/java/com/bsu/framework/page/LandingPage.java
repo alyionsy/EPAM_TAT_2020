@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage extends AbstractPage {
-    private final String BASE_URL = "http://www.ktown4u.com/";
+    private final String LANDING_URL = "http://www.ktown4u.com/";
 
     @FindBy(xpath = "//a[@href=\"/login\"]")
     private WebElement loginButton;
@@ -41,7 +41,7 @@ public class LandingPage extends AbstractPage {
 
     @Override
     public LandingPage openPage() {
-        driver.navigate().to(BASE_URL);
+        driver.navigate().to(LANDING_URL);
         return this;
     }
 }
