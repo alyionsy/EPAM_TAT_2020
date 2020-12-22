@@ -22,17 +22,19 @@ public class LandingPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public LandingPage clickLoginButton() {
+    public LandingPage goToLoginPage() {
         loginButton.click();
         return this;
     }
 
-    public void fillSearchField(String itemName) {
+    public LandingPage enterSearchRequest(String itemName) {
         searchField.sendKeys(itemName);
+        return this;
     }
 
-    public void clickSearchButton() {
+    public SearchResultPage search() {
         searchButton.click();
+        return new SearchResultPage(driver);
     }
 
     public LoginPage openLoginPage() {

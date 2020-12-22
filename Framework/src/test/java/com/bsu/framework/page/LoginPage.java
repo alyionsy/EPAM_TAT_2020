@@ -31,14 +31,14 @@ public class LoginPage extends AbstractPage {
         passwordField.sendKeys(password);
     }
 
-    public void clickLoginSubmitButton() {
+    public void submitLogin() {
         loginSubmitButton.click();
     }
 
     public LoginPage login(User user) {
         enterLogin(user.getLogin());
         enterPassword(user.getPassword());
-        clickLoginSubmitButton();
+        submitLogin();
         return this;
     }
 
@@ -49,7 +49,6 @@ public class LoginPage extends AbstractPage {
     public boolean isLoginFieldEmpty() {
         return getLogin().equals("");
     }
-
 
     public String getCurrentPageUrl() {
         return driver.getCurrentUrl();

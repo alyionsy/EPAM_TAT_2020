@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="14" passed="14" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-12-22T18:07:00Z" name="Surefire suite" finished-at="2020-12-22T18:10:55Z" duration-ms="235178">
+    <groups>
+    </groups>
+    <test started-at="2020-12-22T18:07:00Z" name="Surefire test" finished-at="2020-12-22T18:10:55Z" duration-ms="235178">
+      <class name="com.bsu.framework.test.SearchResultsTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:09:38Z" name="setUp" finished-at="2020-12-22T18:09:43Z" duration-ms="5440" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchResultsExcludeOutOfStockItems()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:09:43Z" name="searchResultsExcludeOutOfStockItems" finished-at="2020-12-22T18:09:53Z" duration-ms="9709" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchResultsExcludeOutOfStockItems -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:09:53Z" name="stopBrowser" finished-at="2020-12-22T18:09:53Z" duration-ms="672" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:09:53Z" name="setUp" finished-at="2020-12-22T18:09:59Z" duration-ms="5412" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchResultsSortByBestSalesTest()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:09:59Z" name="searchResultsSortByBestSalesTest" finished-at="2020-12-22T18:10:09Z" duration-ms="9710" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchResultsSortByBestSalesTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:09Z" name="stopBrowser" finished-at="2020-12-22T18:10:09Z" duration-ms="691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:09Z" name="setUp" finished-at="2020-12-22T18:10:15Z" duration-ms="5439" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchResultsSortByNameDownTest()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:15Z" name="searchResultsSortByNameDownTest" finished-at="2020-12-22T18:10:24Z" duration-ms="8852" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchResultsSortByNameDownTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:24Z" name="stopBrowser" finished-at="2020-12-22T18:10:24Z" duration-ms="698" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:24Z" name="setUp" finished-at="2020-12-22T18:10:30Z" duration-ms="5477" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchResultsSortByNameUpTest()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:30Z" name="searchResultsSortByNameUpTest" finished-at="2020-12-22T18:10:39Z" duration-ms="9675" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchResultsSortByNameUpTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:39Z" name="stopBrowser" finished-at="2020-12-22T18:10:40Z" duration-ms="673" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:40Z" name="setUp" finished-at="2020-12-22T18:10:46Z" duration-ms="5437" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="searchResultsSortByNewestDateTest()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:46Z" name="searchResultsSortByNewestDateTest" finished-at="2020-12-22T18:10:54Z" duration-ms="8536" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchResultsSortByNewestDateTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.SearchResultsTests@6d3af739]" started-at="2020-12-22T18:10:54Z" name="stopBrowser" finished-at="2020-12-22T18:10:55Z" duration-ms="688" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+      </class> <!-- com.bsu.framework.test.SearchResultsTests -->
+      <class name="com.bsu.framework.test.CartTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:00Z" name="setUp" finished-at="2020-12-22T18:07:06Z" duration-ms="6086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="addToCartTest()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:06Z" name="addToCartTest" finished-at="2020-12-22T18:07:14Z" duration-ms="8487" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCartTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:14Z" name="stopBrowser" finished-at="2020-12-22T18:07:16Z" duration-ms="1377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:16Z" name="setUp" finished-at="2020-12-22T18:07:21Z" duration-ms="5433" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="deleteFromCartTest()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:21Z" name="deleteFromCartTest" finished-at="2020-12-22T18:07:34Z" duration-ms="13005" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteFromCartTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:34Z" name="stopBrowser" finished-at="2020-12-22T18:07:35Z" duration-ms="704" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:35Z" name="setUp" finished-at="2020-12-22T18:07:40Z" duration-ms="5434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="modifyItemQuantityInCartTest()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:40Z" name="modifyItemQuantityInCartTest" finished-at="2020-12-22T18:07:54Z" duration-ms="14048" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modifyItemQuantityInCartTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:54Z" name="stopBrowser" finished-at="2020-12-22T18:07:55Z" duration-ms="701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:07:55Z" name="setUp" finished-at="2020-12-22T18:08:00Z" duration-ms="5474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="modifyItemQuantityInCartWithIncorrectDataTest()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:00Z" name="modifyItemQuantityInCartWithIncorrectDataTest" finished-at="2020-12-22T18:08:13Z" duration-ms="12538" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modifyItemQuantityInCartWithIncorrectDataTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:13Z" name="stopBrowser" finished-at="2020-12-22T18:08:14Z" duration-ms="692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:14Z" name="setUp" finished-at="2020-12-22T18:08:19Z" duration-ms="5379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="proceedToCheckoutWithoutAuthenticationTest()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:19Z" name="proceedToCheckoutWithoutAuthenticationTest" finished-at="2020-12-22T18:08:31Z" duration-ms="12262" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- proceedToCheckoutWithoutAuthenticationTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:31Z" name="stopBrowser" finished-at="2020-12-22T18:08:32Z" duration-ms="701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:32Z" name="setUp" finished-at="2020-12-22T18:08:37Z" duration-ms="5504" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="savingItemsInTheCartTest()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:37Z" name="savingItemsInTheCartTest" finished-at="2020-12-22T18:08:53Z" duration-ms="15969" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- savingItemsInTheCartTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.CartTests@4ae82894]" started-at="2020-12-22T18:08:53Z" name="stopBrowser" finished-at="2020-12-22T18:08:54Z" duration-ms="691" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+      </class> <!-- com.bsu.framework.test.CartTests -->
+      <class name="com.bsu.framework.test.LoginTests">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:08:54Z" name="setUp" finished-at="2020-12-22T18:09:00Z" duration-ms="5413" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="createAccountWithIncorrectPasswordTypeTest()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:00Z" name="createAccountWithIncorrectPasswordTypeTest" finished-at="2020-12-22T18:09:05Z" duration-ms="5223" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAccountWithIncorrectPasswordTypeTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:05Z" name="stopBrowser" finished-at="2020-12-22T18:09:05Z" duration-ms="668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:05Z" name="setUp" finished-at="2020-12-22T18:09:11Z" duration-ms="5593" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithInvalidLoginTest()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:11Z" name="loginWithInvalidLoginTest" finished-at="2020-12-22T18:09:21Z" duration-ms="10185" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidLoginTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:21Z" name="stopBrowser" finished-at="2020-12-22T18:09:22Z" duration-ms="699" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:22Z" name="setUp" finished-at="2020-12-22T18:09:27Z" duration-ms="5427" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginWithInvalidPasswordTest()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:27Z" name="loginWithInvalidPasswordTest" finished-at="2020-12-22T18:09:37Z" duration-ms="9658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginWithInvalidPasswordTest -->
+        <test-method is-config="true" signature="stopBrowser()[pri:0, instance:com.bsu.framework.test.LoginTests@543788f3]" started-at="2020-12-22T18:09:37Z" name="stopBrowser" finished-at="2020-12-22T18:09:38Z" duration-ms="692" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stopBrowser -->
+      </class> <!-- com.bsu.framework.test.LoginTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>

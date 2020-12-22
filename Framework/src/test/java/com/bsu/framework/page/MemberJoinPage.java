@@ -54,7 +54,7 @@ public class MemberJoinPage extends AbstractPage {
     }
 
     public boolean isPasswordFieldActive() {
-        return passwordField.isSelected();
+        return passwordField.equals(driver.switchTo().activeElement());
     }
 
     @Override
