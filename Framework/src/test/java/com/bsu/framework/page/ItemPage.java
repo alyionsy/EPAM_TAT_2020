@@ -33,7 +33,7 @@ public class ItemPage extends AbstractPage {
     public ItemPage addToCart() {
         addToCartButton.click();
         new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
-                .until(ExpectedConditions.elementToBeClickable(By.xpath("//a[@class=\"modal-btn btn-light-blue\"]")));
+                .until(ExpectedConditions.elementToBeClickable(goToCartButton));
         return this;
     }
 
@@ -48,8 +48,8 @@ public class ItemPage extends AbstractPage {
         return this;
     }
 
-    public CartPage openCartPage(String itemXpath) {
-        return new CartPage(driver, itemXpath);
+    public CartPage openCartPage() {
+        return new CartPage(driver);
     }
 
     @Override

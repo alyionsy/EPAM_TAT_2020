@@ -22,8 +22,9 @@ public class LandingPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickLoginButton() {
+    public LandingPage clickLoginButton() {
         loginButton.click();
+        return this;
     }
 
     public void fillSearchField(String itemName) {
@@ -32,6 +33,10 @@ public class LandingPage extends AbstractPage {
 
     public void clickSearchButton() {
         searchButton.click();
+    }
+
+    public LoginPage openLoginPage() {
+        return new LoginPage(driver);
     }
 
     @Override

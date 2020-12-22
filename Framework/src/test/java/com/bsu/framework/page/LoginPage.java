@@ -1,5 +1,6 @@
 package com.bsu.framework.page;
 
+import com.bsu.framework.model.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -34,9 +35,21 @@ public class LoginPage extends AbstractPage {
         loginSubmitButton.click();
     }
 
+    public LoginPage login(User user) {
+        enterLogin(user.getLogin());
+        enterPassword(user.getPassword());
+        clickLoginSubmitButton();
+        return this;
+    }
+
     public String getLogin() {
         return loginField.getText();
     }
+
+    public boolean isLoginFieldEmpty() {
+        return getLogin().equals("");
+    }
+
 
     public String getCurrentPageUrl() {
         return driver.getCurrentUrl();
@@ -44,6 +57,10 @@ public class LoginPage extends AbstractPage {
 
     public String getLoginPageUrl() {
         return LOGIN_URL;
+    }
+
+    public CartPage openCartPage() {
+        return new CartPage(driver);
     }
 
     @Override

@@ -5,11 +5,19 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 public class CartPage extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
     private final String CART_URL = "http://www.ktown4u.com/cart";
-    private String itemXpath;
+//    private String itemXpath;
 
     @FindBy(xpath = "//a[@id=\"cartDel\"]")
     private WebElement deleteButton;
@@ -20,19 +28,23 @@ public class CartPage extends AbstractPage {
     @FindBy(xpath = "//input[@id=\"settleButton\"]")
     private WebElement proceedToCheckoutButton;
 
+    @FindBy(xpath = "//input[@class=\"kt_btn1\"]")
+    private WebElement modifyButton;
+
+    @FindBy(xpath = "//input[@class=\"kt_input1\"]")
+    private WebElement modifyField;
+
     public CartPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
-        itemXpath = "";
     }
 
     public CartPage(WebDriver driver, String itemXpath) {
         super(driver);
         PageFactory.initElements(driver, this);
-        this.itemXpath = itemXpath;
     }
 
-    public boolean isItemInCart() {
+    public boolean isItemInCart(String itemXpath) {
         try {
             return driver.findElement(By.xpath(itemXpath)) != null;
         } catch (NoSuchElementException exception) {
@@ -54,6 +66,22 @@ public class CartPage extends AbstractPage {
     public CartPage proceedToCheckout() {
         proceedToCheckoutButton.click();
         return this;
+    }
+
+    public CartPage modifyItemQuantity(String newQuantity) {
+        modifyField.clear();
+        modifyField.sendKeys(newQuantity);
+        modifyButton.click();
+
+        Alert alertOK = driver.switchTo().alert();
+        alertOK.accept();
+
+        driver.navigate().refresh();
+        return this;
+    }
+
+    public String getModifyFieldContent() {
+        return modifyField.getAttribute("value");
     }
 
     public LoginPage openLoginPage() {
