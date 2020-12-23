@@ -1,5 +1,6 @@
 package com.bsu.framework.test;
 
+//mvn -Dtestng.dtd.http=true -Dbrowser=chrome clean test
 import com.bsu.framework.model.Item;
 import com.bsu.framework.model.User;
 import com.bsu.framework.page.ItemPage;
