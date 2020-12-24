@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 public class CartPage extends AbstractPage {
     private final Logger logger = LogManager.getRootLogger();
     private final String CART_URL = "http://www.ktown4u.com/cart";
-//    private String itemXpath;
+
 
     @FindBy(xpath = "//a[@id=\"cartDel\"]")
     private WebElement deleteButton;
@@ -60,6 +60,7 @@ public class CartPage extends AbstractPage {
 
     public CartPage confirmDelete() {
         confirmDeleteButton.click();
+        logger.info("Item was deleted from the cart.");
         return this;
     }
 
@@ -77,6 +78,8 @@ public class CartPage extends AbstractPage {
         alertOK.accept();
 
         driver.navigate().refresh();
+
+        logger.info("Item quantity was modified.");
         return this;
     }
 
@@ -91,6 +94,7 @@ public class CartPage extends AbstractPage {
     @Override
     public CartPage openPage() {
         driver.navigate().to(CART_URL);
+        logger.info("Open cart page.");
         return this;
     }
 }

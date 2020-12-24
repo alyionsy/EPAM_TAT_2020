@@ -1,6 +1,8 @@
 package com.bsu.framework.page;
 
 import com.bsu.framework.util.StringHandler;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,6 +18,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchResultPage extends AbstractPage {
+    private final Logger logger = LogManager.getRootLogger();
     private final String BASE_URL = "http://www.ktown4u.com/";
 
     @FindBy(xpath = "//a[@href=\"javascript:getPageMove('goodsSearch', 'newgoods', null, '');\"]")
@@ -40,21 +43,25 @@ public class SearchResultPage extends AbstractPage {
 
     public SearchResultPage sortByNewest() {
         sortByNewestButton.click();
+        logger.info("Item were sorted by date.");
         return this;
     }
 
     public SearchResultPage sortByBestSales() {
         sortByBestSalesButton.click();
+        logger.info("Item were sorted by sales number.");
         return this;
     }
 
     public SearchResultPage sortByNameUp() {
         sortByNameUpButton.click();
+        logger.info("Item were sorted by name (up).");
         return this;
     }
 
     public SearchResultPage sortByNameDown() {
         sortByNameDownButton.click();
+        logger.info("Item were sorted by name (down).");
         return this;
     }
 
@@ -62,6 +69,7 @@ public class SearchResultPage extends AbstractPage {
         outOfStockCheckbox.click();
         new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.elementToBeClickable(outOfStockCheckbox));
+        logger.info("Out of stock items were excluded.");
         return this;
     }
 

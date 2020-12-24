@@ -1,6 +1,6 @@
 package com.bsu.framework.test;
 
-//mvn -Dtestng.dtd.http=true -Dbrowser=chrome clean test
+//-Dtestng.dtd.http=${true} -Dbrowser=${chrome} -Dsurefire.suiteXmlFiles=${src\test\resources\com.bsu.framework\testng-all.xml} clean test
 import com.bsu.framework.model.Item;
 import com.bsu.framework.model.User;
 import com.bsu.framework.page.ItemPage;
@@ -19,9 +19,6 @@ public class CartTests extends CommonConditions {
     private final Item oldItem = new Item("http://www.ktown4u.com/iteminfo?grp_no=1741898&goods_no=31777",
             "//a[@href=\"/iteminfo?grp_no=1741898&goods_no=31777\"]",
             "EXO - 2017 Winter Special Album");
-    private final String quantityToWrite = "2";
-    private final String initialQuantity = "1";
-    private final String incorrectData = "aaa";
 
     @Test
     public void addToCartTest() {
@@ -85,6 +82,7 @@ public class CartTests extends CommonConditions {
 
     @Test
     public void modifyItemQuantityInCartTest() {
+        String quantityToWrite = "2";
         String currentQuantity = new ItemPage(driver, item.getUrl())
                 .openPage()
                 .addToCart()
@@ -99,6 +97,7 @@ public class CartTests extends CommonConditions {
 
     @Test
     public void modifyItemQuantityInCartWithIncorrectDataTest() {
+        String incorrectData = "aaa";
         String currentQuantity = new ItemPage(driver, item.getUrl())
                 .openPage()
                 .addToCart()
@@ -108,6 +107,7 @@ public class CartTests extends CommonConditions {
                 .modifyItemQuantity(incorrectData)
                 .getModifyFieldContent();
 
+        String initialQuantity = "1";
         assertThat(currentQuantity, is(equalTo(initialQuantity)));
     }
 }

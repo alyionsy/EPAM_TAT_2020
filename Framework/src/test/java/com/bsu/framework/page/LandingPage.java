@@ -1,11 +1,14 @@
 package com.bsu.framework.page;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LandingPage extends AbstractPage {
+    private final Logger logger = LogManager.getRootLogger();
     private final String LANDING_URL = "http://www.ktown4u.com/";
 
     @FindBy(xpath = "//a[@href=\"/login\"]")
@@ -44,6 +47,7 @@ public class LandingPage extends AbstractPage {
     @Override
     public LandingPage openPage() {
         driver.navigate().to(LANDING_URL);
+        logger.info("Open landing page.");
         return this;
     }
 }

@@ -1,6 +1,8 @@
 package com.bsu.framework.page;
 
 import com.bsu.framework.model.AccountInfo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,6 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 public class MemberJoinPage extends AbstractPage {
+    private final Logger logger = LogManager.getRootLogger();
     private final String MEMBER_JOIN_URL = "http://www.ktown4u.com/memberjoin";
 
     @FindBy(xpath = "//select[@id=\"NATI_NO\"]")
@@ -49,6 +52,8 @@ public class MemberJoinPage extends AbstractPage {
 
         Alert alertOK = driver.switchTo().alert();
         alertOK.accept();
+
+        logger.info("New account was created.");
 
         return this;
     }

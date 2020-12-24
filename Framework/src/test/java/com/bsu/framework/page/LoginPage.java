@@ -1,12 +1,15 @@
 package com.bsu.framework.page;
 
 import com.bsu.framework.model.User;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends AbstractPage {
+    private final Logger logger = LogManager.getRootLogger();
     private final String LOGIN_URL = "http://www.ktown4u.com/login";
 
     @FindBy(xpath = "//input[@id=\"user_id\"]")
@@ -39,6 +42,7 @@ public class LoginPage extends AbstractPage {
         enterLogin(user.getLogin());
         enterPassword(user.getPassword());
         submitLogin();
+        logger.info("Authentication was completed.");
         return this;
     }
 
@@ -65,6 +69,7 @@ public class LoginPage extends AbstractPage {
     @Override
     public LoginPage openPage() {
         driver.navigate().to(LOGIN_URL);
+        logger.info("Open login page.");
         return this;
     }
 }

@@ -1,5 +1,7 @@
 package com.bsu.framework.page;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ItemPage extends AbstractPage {
+    private final Logger logger = LogManager.getRootLogger();
     private String itemUrl;
 
     @FindBy(xpath = "//button[@id=\"cartGo2\"]")
@@ -34,6 +37,7 @@ public class ItemPage extends AbstractPage {
         addToCartButton.click();
         new WebDriverWait(driver, Duration.ofSeconds(10).getSeconds())
                 .until(ExpectedConditions.elementToBeClickable(goToCartButton));
+        logger.info("Item was added to cart.");
         return this;
     }
 
@@ -55,6 +59,7 @@ public class ItemPage extends AbstractPage {
     @Override
     public ItemPage openPage() {
         driver.navigate().to(itemUrl);
+        logger.info("Open item page.");
         return this;
     }
 }
